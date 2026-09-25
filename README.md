@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b0f19,50:0e1726,100:0b0f19&height=200&section=header&text=HARSHIT%20%7C%20H-DEVZ&fontSize=48&fontAlignY=38&animation=twinkling&fontColor=00F5A0&desc=Full-Stack%20Software%20Engineer%20%26%20Digital%20Craftsman&descAlignY=62&descSize=18" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b0f19,50:0e1726,100:0b0f19&height=200&section=header&text=HARSHIT%20%7C%20&fontSize=48&fontAlignY=38&animation=twinkling&fontColor=00F5A0&desc=Full-Stack%20Software%20Engineer%20%26%20Digital%20Craftsman&descAlignY=62&descSize=18" width="100%" />
 
 
   <br>
@@ -45,7 +45,7 @@
 
 ```yaml
 ╭──────────────────────────────────────────────────────────────────────────╮
-│  IDENTIFIER       ::  HARSHIT (H-DEVZ)
+│  IDENTIFIER       ::  HARSHIT ()
 │  ROLE             ::  Full-Stack Software Engineer & Digital Craftsman
 │  PORTFOLIO        ::  https://h-devz.vercel.app/
 │  LINKEDIN         ::  https://www.linkedin.com/in/harshitdevz/
