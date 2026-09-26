@@ -136,7 +136,7 @@ const engineer = {
       <div align="center">
         <img src="https://img.shields.io/badge/🛍️_WEARBUY-HYPERLOCAL_FASHION-00F5A0?style=for-the-badge&logo=shopify&logoColor=black" />
         <br>
-        <sub><b>Your City's Drip — 60-Minute Doorstep Fashion with Try-at-Home</b></sub>
+        <sub><b>Your City's Drip — 60-Minute Doorstep Fashion</b></sub>
         <br><br>
         <img src="https://img.shields.io/badge/Status-Active_Development-FF6B00?style=flat-square" />
         <img src="https://img.shields.io/badge/Delivery-30--60_Mins-00FF00?style=flat-square" />
