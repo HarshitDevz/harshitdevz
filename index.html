@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harshit (H-DEVZ) // Cyber Arcade & 3D Matrix Suite</title>
+  <title>Harshit (H-DEVZ) // Cyber Arcade, 3D Matrix & Terminal Suite</title>
   <style>
     :root {
       --bg: #070a11;
       --card-bg: #0d121f;
-      --border: #1e2638;
+      --card-border: #1e2638;
       --mint: #00F5A0;
       --cyan: #00D9F5;
       --indigo: #6366F1;
@@ -28,17 +28,20 @@
       align-items: center;
       padding: 24px 16px;
       overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(0, 245, 160, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
     }
 
     header {
       text-align: center;
       margin-bottom: 24px;
-      max-width: 800px;
+      max-width: 850px;
     }
 
     .badge {
       display: inline-block;
-      padding: 4px 12px;
+      padding: 5px 14px;
       background: rgba(0, 245, 160, 0.1);
       border: 1px solid var(--mint);
       color: var(--mint);
@@ -46,103 +49,122 @@
       font-family: var(--font-mono);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       margin-bottom: 12px;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 900;
       background: linear-gradient(135deg, var(--mint), var(--cyan), var(--indigo));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 8px;
+      letter-spacing: -0.5px;
     }
 
     p.subtitle {
       color: var(--text-muted);
       font-size: 14px;
+      line-height: 1.5;
     }
 
-    /* Tabs */
+    /* Navigation Tabs */
     .nav-tabs {
       display: flex;
       gap: 8px;
       background: #0b0f19;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 4px;
-      margin-bottom: 24px;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 6px;
+      margin-bottom: 28px;
       flex-wrap: wrap;
       justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
 
     .tab-btn {
       background: transparent;
-      border: none;
+      border: 1px solid transparent;
       color: var(--text-muted);
-      padding: 8px 16px;
-      border-radius: 8px;
+      padding: 10px 18px;
+      border-radius: 10px;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 6px;
-      transition: all 0.2s;
+      gap: 8px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    .tab-btn:hover { color: #fff; background: rgba(255,255,255,0.05); }
+    .tab-btn:hover { 
+      color: #fff; 
+      background: rgba(255,255,255,0.04); 
+    }
+
     .tab-btn.active {
       background: rgba(0, 245, 160, 0.15);
       color: var(--mint);
-      border: 1px solid rgba(0, 245, 160, 0.4);
+      border-color: rgba(0, 245, 160, 0.4);
+      box-shadow: 0 0 15px rgba(0, 245, 160, 0.2);
     }
 
     .tab-panel {
       display: none;
       width: 100%;
-      max-width: 900px;
+      max-width: 920px;
+      animation: fadeIn 0.25s ease-in-out;
     }
     .tab-panel.active { display: block; }
 
-    /* Card container */
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Snake Game */
+    /* Container Card */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.6);
+      position: relative;
+    }
+
+    /* --- SNAKE GAME --- */
     .game-hud {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       font-family: var(--font-mono);
       font-size: 13px;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .hud-stat {
       background: #070a11;
-      border: 1px solid var(--border);
-      padding: 6px 14px;
-      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      padding: 8px 16px;
+      border-radius: 10px;
     }
     .hud-stat span { color: var(--mint); font-weight: bold; }
 
     #snakeCanvas {
       width: 100%;
-      max-width: 600px;
+      max-width: 640px;
       height: 380px;
       background: #05070d;
-      border: 2px solid #1f2937;
-      border-radius: 10px;
+      border: 2px solid #1f293d;
+      border-radius: 12px;
       display: block;
       margin: 0 auto 16px auto;
-      box-shadow: inset 0 0 20px rgba(0, 245, 160, 0.1);
+      box-shadow: inset 0 0 25px rgba(0, 245, 160, 0.1);
     }
 
     .controls-bar {
@@ -150,84 +172,125 @@
       justify-content: center;
       gap: 12px;
       margin-bottom: 12px;
+      flex-wrap: wrap;
     }
 
     .btn {
       background: #161f30;
       color: #fff;
-      border: 1px solid var(--border);
-      padding: 8px 18px;
-      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      padding: 10px 22px;
+      border-radius: 10px;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
     }
     .btn:hover { background: #202b42; border-color: var(--mint); }
     .btn-primary {
       background: linear-gradient(135deg, #00F5A0, #00D9F5);
       color: #000;
       border: none;
-      font-weight: 700;
     }
-    .btn-primary:hover { opacity: 0.9; }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
 
-    /* D-Pad on Mobile */
+    /* Mobile D-Pad */
     .d-pad {
       display: grid;
-      grid-template-columns: repeat(3, 44px);
-      grid-template-rows: repeat(2, 44px);
-      gap: 6px;
+      grid-template-columns: repeat(3, 48px);
+      grid-template-rows: repeat(2, 48px);
+      gap: 8px;
       justify-content: center;
-      margin-top: 10px;
+      margin-top: 14px;
     }
     .d-pad button {
       background: #111827;
       border: 1px solid #374151;
       color: #fff;
-      border-radius: 8px;
-      font-size: 16px;
+      border-radius: 10px;
+      font-size: 18px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
     }
+    .d-pad button:active { background: var(--mint); color: #000; }
 
-    /* 3D Orbit Canvas */
+    /* --- 3D MATRIX --- */
     #orbitCanvas {
       width: 100%;
-      height: 420px;
+      height: 440px;
       background: #05070d;
-      border: 1px solid var(--border);
-      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
       display: block;
       cursor: grab;
+      touch-action: none;
     }
     #orbitCanvas:active { cursor: grabbing; }
 
-    /* Terminal */
+    /* --- LIVE PORTFOLIO TAB --- */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 768px) {
+      .portfolio-grid { grid-template-columns: 1.2fr 0.8fr; }
+    }
+
+    .preview-card {
+      background: #070a11;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .metric-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: rgba(0, 245, 160, 0.1);
+      border: 1px solid rgba(0, 245, 160, 0.3);
+      color: var(--mint);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+
+    /* --- TERMINAL --- */
     .terminal-body {
       background: #050811;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 18px;
       font-family: var(--font-mono);
       font-size: 13px;
-      min-height: 380px;
+      min-height: 420px;
       display: flex;
       flex-direction: column;
     }
     .term-output {
       flex: 1;
       overflow-y: auto;
-      max-height: 340px;
-      line-height: 1.6;
+      max-height: 360px;
+      line-height: 1.7;
       white-space: pre-wrap;
     }
     .term-input-row {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-top: 12px;
-      border-top: 1px solid var(--border);
-      padding-top: 8px;
+      margin-top: 14px;
+      border-top: 1px solid var(--card-border);
+      padding-top: 10px;
     }
     .term-prompt { color: var(--mint); font-weight: bold; }
     .term-input {
@@ -241,48 +304,59 @@
     }
 
     footer {
-      margin-top: 32px;
+      margin-top: 36px;
       text-align: center;
       color: var(--text-muted);
       font-size: 12px;
     }
-    footer a { color: var(--cyan); text-decoration: none; }
+    footer a { color: var(--cyan); text-decoration: none; font-weight: 600; }
     footer a:hover { text-decoration: underline; }
   </style>
 <script src="/_aistudio-iframe.js?v=2c34bde1"></script></head>
 <body>
 
   <header>
-    <div class="badge">HARSHIT DEV // H-DEVZ</div>
-    <h1>Cyber Arcade & 3D Matrix Suite</h1>
-    <p class="subtitle">Playable Contribution Snake, Interactive 3D Hologram, & Cyber CLI Terminal</p>
+    <div class="badge">SYSTEM IDENTIFIER // H-DEVZ</div>
+    <h1>Interactive Mission Control Suite</h1>
+    <p class="subtitle">High-velocity web arcade, interactive 3D matrix visualizer, portfolio telemetry & cyber CLI terminal.</p>
   </header>
 
+  <!-- NAVIGATION TABS -->
   <nav class="nav-tabs">
-    <button class="tab-btn active" onclick="switchTab('snake')">🎮 Cyber Snake Arcade</button>
-    <button class="tab-btn" onclick="switchTab('3d')">🌐 3D Isometric Matrix</button>
-    <button class="tab-btn" onclick="switchTab('terminal')">💻 Cyber Terminal CLI</button>
-    <button class="tab-btn" onclick="window.open('https://h-devz.vercel.app/', '_blank')">⚡ Flagship Portfolio ↗</button>
+    <button class="tab-btn active" data-tab="snake" onclick="switchTab('snake')">
+      <span>🎮</span> Play Cyber Snake
+    </button>
+    <button class="tab-btn" data-tab="3d" onclick="switchTab('3d')">
+      <span>🌐</span> 3D Isometric Lab
+    </button>
+    <button class="tab-btn" data-tab="portfolio" onclick="switchTab('portfolio')">
+      <span>⚡</span> Live Portfolio
+    </button>
+    <button class="tab-btn" data-tab="terminal" onclick="switchTab('terminal')">
+      <span>💻</span> Cyber Terminal CLI
+    </button>
   </nav>
 
-  <!-- TAB 1: SNAKE ARCADE -->
+  <!-- TAB 1: PLAY CYBER SNAKE -->
   <div id="tab-snake" class="tab-panel active">
     <div class="card">
       <div class="game-hud">
         <div class="hud-stat">COMMITS EATEN: <span id="scoreVal">0</span></div>
         <div class="hud-stat">HIGH SCORE: <span id="highScoreVal">0</span></div>
         <div class="hud-stat">SPEED: <span id="speedVal">1x</span></div>
+        <div class="hud-stat">AUDIO: <span id="audioStatus">SYNTH ON</span></div>
       </div>
 
-      <canvas id="snakeCanvas" width="600" height="380"></canvas>
+      <canvas id="snakeCanvas" width="640" height="380"></canvas>
 
       <div class="controls-bar">
         <button class="btn btn-primary" id="startBtn" onclick="toggleGame()">START / RESTART</button>
         <button class="btn" onclick="togglePause()">PAUSE</button>
+        <button class="btn" onclick="toggleMute()">MUTE AUDIO</button>
       </div>
 
-      <p style="text-align:center; font-size:12px; color:var(--text-muted);">
-        Use <b>Arrow Keys</b> or <b>W, A, S, D</b> to navigate the snake. Eat green GitHub commits to grow!
+      <p style="text-align:center; font-size:12px; color:var(--text-muted); margin-top:6px;">
+        Use <b>Arrow Keys</b> or <b>W, A, S, D</b> to navigate. Eat glowing commits to expand the grid!
       </p>
 
       <div class="d-pad">
@@ -299,49 +373,99 @@
   <!-- TAB 2: 3D ISOMETRIC MATRIX -->
   <div id="tab-3d" class="tab-panel">
     <div class="card">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-        <span style="font-size:13px; font-family:var(--font-mono); color:var(--cyan);">
-          🌐 INTERACTIVE 3D COMMIT MATRIX (CLICK & DRAG TO ORBIT)
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+        <span style="font-size:13px; font-family:var(--font-mono); color:var(--cyan); font-weight:700;">
+          🌐 REAL-TIME 3D COMMIT MATRIX (CLICK & DRAG TO ORBIT)
         </span>
-        <button class="btn" style="padding:4px 10px; font-size:11px;" onclick="resetOrbit()">Reset Camera</button>
+        <div style="display:flex; gap:8px;">
+          <button class="btn" style="padding:6px 12px; font-size:12px;" onclick="randomize3D()">Regenerate Heights</button>
+          <button class="btn" style="padding:6px 12px; font-size:12px;" onclick="resetOrbit()">Reset Camera</button>
+        </div>
       </div>
 
-      <canvas id="orbitCanvas" width="860" height="420"></canvas>
+      <canvas id="orbitCanvas" width="870" height="440"></canvas>
 
-      <p style="text-align:center; font-size:12px; color:var(--text-muted); margin-top:10px;">
-        Click and drag with mouse or swipe on screen to rotate camera in 3D space.
+      <p style="text-align:center; font-size:12px; color:var(--text-muted); margin-top:12px;">
+        Click and drag with mouse or swipe with finger to orbit freely in 3D isometric space.
       </p>
     </div>
   </div>
 
-  <!-- TAB 3: CYBER TERMINAL -->
+  <!-- TAB 3: LIVE PORTFOLIO -->
+  <div id="tab-portfolio" class="tab-panel">
+    <div class="card">
+      <div class="portfolio-grid">
+        <div class="preview-card">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+            <span class="metric-badge">LIGHTHOUSE 98+</span>
+            <span class="metric-badge" style="border-color:rgba(0, 217, 245, 0.3); color:var(--cyan);">0.4s FCP</span>
+            <span class="metric-badge" style="border-color:rgba(99, 102, 241, 0.3); color:var(--indigo);">0.00 CLS</span>
+          </div>
+
+          <h2 style="font-size:24px; font-weight:800; margin-bottom:8px; color:#fff;">
+            Harshit // Flagship Digital Platform
+          </h2>
+          <p style="font-size:14px; color:var(--text-muted); line-height:1.6; margin-bottom:18px;">
+            High-performance AI/ML portfolio featuring Portvio-inspired architecture, spring micro-interactions, responsive viewport tokens, and edge-cached serverless deployment.
+          </p>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="https://h-devz.vercel.app/" target="_blank" class="btn btn-primary">
+              ⚡ Open Live Portfolio (h-devz.vercel.app) ↗
+            </a>
+            <a href="https://github.com/HarshitDevz" target="_blank" class="btn">
+              Explore GitHub Repositories
+            </a>
+          </div>
+        </div>
+
+        <div class="preview-card">
+          <h3 style="font-size:14px; font-mono; font-weight:700; color:var(--mint); margin-bottom:12px; text-transform:uppercase;">
+            🛠️ Production Architecture
+          </h3>
+          <ul style="font-size:13px; color:var(--text-muted); list-style:none; line-height:2;">
+            <li>✓ <b>Frontend:</b> Next.js 15, React 19, TypeScript</li>
+            <li>✓ <b>Styling:</b> Tailwind CSS & Framer Motion</li>
+            <li>✓ <b>Deployment:</b> Vercel Edge Global Network</li>
+            <li>✓ <b>Backend:</b> Node.js, Express, MongoDB</li>
+            <li>✓ <b>Security:</b> JWT token rotation & safe headers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: CYBER TERMINAL -->
   <div id="tab-terminal" class="tab-panel">
     <div class="card">
       <div class="terminal-body">
         <div class="term-output" id="termOutput">
 ╭────────────────────────────────────────────────────────────────────────╮
-│  H-DEVZ CYBER TERMINAL CLI (v2.5)                                      │
-│  Type 'help' for available system commands                             │
+│  H-DEVZ CYBER TERMINAL CLI (v2.6) - INITIALIZED                        │
+│  Type 'help' for available system diagnostics and module controls      │
 ╰────────────────────────────────────────────────────────────────────────╯
-✓ Diagnostic modules online. Type 'skills', 'projects', 'snake', or 'contact'.
+✓ Connected to host: harshitdevz.local (IP: 127.0.0.1)
+✓ System core operational. Type 'skills', 'projects', 'snake', '3d', or 'contact'.
         </div>
         <div class="term-input-row">
           <span class="term-prompt">harshit@h-devz:~$</span>
-          <input type="text" class="term-input" id="termInput" autofocus placeholder="Type command here (e.g. help)..." />
+          <input type="text" class="term-input" id="termInput" autofocus placeholder="Type command here (e.g. help, skills, snake)..." />
         </div>
       </div>
     </div>
   </div>
 
   <footer>
-    Crafted with precision by <a href="https://github.com/HarshitDevz" target="_blank">Harshit Dev (@HarshitDevz)</a> · 
+    Designed & Engineered with passion by <a href="https://github.com/HarshitDevz" target="_blank">Harshit Dev (@HarshitDevz)</a> · 
     <a href="https://h-devz.vercel.app/" target="_blank">h-devz.vercel.app</a>
   </footer>
 
   <script>
-    // Audio synthesizer for sound effects
+    // --- AUDIO SYNTHESIZER ---
+    let soundEnabled = true;
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     function beep(freq, duration, type="square") {
+      if (!soundEnabled) return;
       try {
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
@@ -356,19 +480,48 @@
       } catch(e){}
     }
 
-    // Tabs Switcher
+    function toggleMute() {
+      soundEnabled = !soundEnabled;
+      document.getElementById("audioStatus").textContent = soundEnabled ? "SYNTH ON" : "MUTED";
+    }
+
+    // --- TAB SWITCHER & HASH ROUTER ---
     function switchTab(tabId) {
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
-      
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        if (btn.getAttribute('data-tab') === tabId) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+
       const targetPanel = document.getElementById('tab-' + tabId);
       if (targetPanel) {
         targetPanel.classList.add('active');
-        event.target.classList.add('active');
         if (tabId === '3d') init3D();
         beep(700, 0.05);
+        history.replaceState(null, "", "#" + tabId);
       }
     }
+
+    // Initialize tab from URL hash if provided
+    window.addEventListener("DOMContentLoaded", () => {
+      const hash = window.location.hash.replace("#", "").toLowerCase();
+      if (["snake", "3d", "portfolio", "terminal"].includes(hash)) {
+        switchTab(hash);
+      }
+    });
+
+    window.addEventListener("hashchange", () => {
+      const hash = window.location.hash.replace("#", "").toLowerCase();
+      if (["snake", "3d", "portfolio", "terminal"].includes(hash)) {
+        switchTab(hash);
+      }
+    });
 
     // --- SNAKE GAME ENGINE ---
     const canvas = document.getElementById("snakeCanvas");
@@ -452,7 +605,7 @@
         beep(200, 0.3, "sawtooth");
         clearInterval(gameLoop);
         isRunning = false;
-        alert("GAME OVER! Final Score: " + score);
+        alert("GAME OVER! Commits Eaten: " + score);
         return;
       }
 
@@ -480,7 +633,7 @@
       ctx.fillStyle = "#05070d";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Draw faint grid
+      // Grid lines
       ctx.strokeStyle = "#111827";
       ctx.lineWidth = 0.5;
       for (let x = 0; x < canvas.width; x += gridSize) {
@@ -490,18 +643,18 @@
         ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
       }
 
-      // Draw Food (GitHub commit block)
+      // Food item
       ctx.fillStyle = "#00F5A0";
-      ctx.shadowBlur = 10;
+      ctx.shadowBlur = 12;
       ctx.shadowColor = "#00F5A0";
       ctx.fillRect(food.x * gridSize + 2, food.y * gridSize + 2, gridSize - 4, gridSize - 4);
       ctx.shadowBlur = 0;
 
-      // Draw Snake Body
+      // Snake body
       snake.forEach((seg, i) => {
         if (i === 0) {
-          ctx.fillStyle = "#00D9F5"; // Head
-          ctx.shadowBlur = 8;
+          ctx.fillStyle = "#00D9F5";
+          ctx.shadowBlur = 10;
           ctx.shadowColor = "#00D9F5";
         } else {
           ctx.fillStyle = i % 2 === 0 ? "#00F5A0" : "#39D353";
@@ -513,7 +666,7 @@
     }
     drawSnake();
 
-    // --- 3D ISOMETRIC MATRIX ENGINE ---
+    // --- 3D ISOMETRIC MATRIX ---
     const c3d = document.getElementById("orbitCanvas");
     const ctx3d = c3d.getContext("2d");
     let rotX = 0.6;
@@ -536,7 +689,6 @@
       draw3D();
     });
 
-    // Touch support for mobile
     c3d.addEventListener("touchstart", (e) => {
       if (e.touches.length === 1) {
         isDragging = true;
@@ -560,16 +712,20 @@
       draw3D();
     }
 
-    // Grid data
     const gridCols = 24;
     const gridRows = 7;
-    const heights = [];
-    for (let c = 0; c < gridCols; c++) {
-      heights[c] = [];
-      for (let r = 0; r < gridRows; r++) {
-        heights[c][r] = Math.random() > 0.4 ? Math.floor(Math.random() * 50) + 10 : 0;
+    let heights = [];
+    function randomize3D() {
+      heights = [];
+      for (let c = 0; c < gridCols; c++) {
+        heights[c] = [];
+        for (let r = 0; r < gridRows; r++) {
+          heights[c][r] = Math.random() > 0.4 ? Math.floor(Math.random() * 55) + 10 : 0;
+        }
       }
+      draw3D();
     }
+    randomize3D();
 
     function init3D() {
       draw3D();
@@ -580,8 +736,8 @@
       ctx3d.fillRect(0, 0, c3d.width, c3d.height);
 
       const cx = c3d.width / 2;
-      const cy = c3d.height / 2 + 40;
-      const cellSize = 14;
+      const cy = c3d.height / 2 + 35;
+      const cellSize = 15;
 
       for (let c = 0; c < gridCols; c++) {
         for (let r = 0; r < gridRows; r++) {
@@ -589,7 +745,6 @@
           const z0 = (r - gridRows / 2) * cellSize;
           const h = heights[c][r];
 
-          // 3D Rotation transform
           const cosY = Math.cos(rotY), sinY = Math.sin(rotY);
           const cosX = Math.cos(rotX), sinX = Math.sin(rotX);
 
@@ -600,7 +755,6 @@
           const projX = cx + x1;
           const projY = cy + y1 * cosX - z1 * sinX;
 
-          // Color based on height
           if (h > 0) {
             ctx3d.fillStyle = h > 35 ? "#00F5A0" : h > 20 ? "#00D9F5" : "#0e4429";
             ctx3d.fillRect(projX - cellSize/2, projY - cellSize/2, cellSize - 2, h + 4);
@@ -611,19 +765,18 @@
         }
       }
     }
-    init3D();
 
     // --- CYBER TERMINAL ENGINE ---
     const termInput = document.getElementById("termInput");
     const termOutput = document.getElementById("termOutput");
 
     const commands = {
-      help: "Available commands:\n  • skills    : Show Harshit's primary tech stack\n  • projects  : View flagship deployments\n  • snake     : Switch to snake arcade game\n  • 3d        : Switch to 3D matrix viewer\n  • portfolio : Open live portfolio (h-devz.vercel.app)\n  • clear     : Clear terminal history\n  • contact   : Get direct contact info",
+      help: "Available system commands:\n  • skills    : Show Harshit's primary technical proficiencies\n  • projects  : View production platforms & live works\n  • snake     : Switch to snake arcade game\n  • 3d        : Switch to 3D matrix viewer\n  • portfolio : Open live portfolio (h-devz.vercel.app)\n  • clear     : Clear terminal history\n  • contact   : Get direct contact & transmission info",
       skills: "⚡ TECHNICAL PROFICIENCIES:\n  Frontend : Next.js 15, React 19, TypeScript, Tailwind CSS, Framer Motion\n  Backend  : Node.js, Express.js, MongoDB, REST APIs, GraphQL\n  Cloud    : Vercel Edge, GitHub Actions, Firebase, Docker",
       projects: "🚀 FEATURED DEPLOYMENTS:\n  [1] H-DEVZ Flagship Portfolio (https://h-devz.vercel.app/)\n  [2] Enterprise Full-Stack Application Suite\n  [3] Modern Automation & Developer Workflows",
       snake: () => { switchTab('snake'); return "Launching Snake Arcade Game..."; },
       "3d": () => { switchTab('3d'); return "Launching 3D Isometric Matrix..."; },
-      portfolio: () => { window.open('https://h-devz.vercel.app/', '_blank'); return "Opening https://h-devz.vercel.app/ in new tab..."; },
+      portfolio: () => { switchTab('portfolio'); return "Switching to Live Portfolio Showcase..."; },
       clear: () => { termOutput.textContent = ""; return ""; },
       contact: "📬 DISPATCH HARSHIT:\n  Email     : harshhit.uiu@gmail.com\n  LinkedIn  : https://www.linkedin.com/in/harshitdevz/\n  Portfolio : https://h-devz.vercel.app/"
     };
@@ -644,12 +797,6 @@
         termOutput.scrollTop = termOutput.scrollHeight;
       }
     });
-
-    // Check query params if any
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get("action") === "snake") switchTab("snake");
-    if (urlParams.get("action") === "3d") switchTab("3d");
-    if (urlParams.get("action") === "terminal") switchTab("terminal");
   </script>
 </body>
 </html>
