@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshit (H-DEVZ) // Cyber Arcade & 3D Matrix Suite</title>
+  <style>
+    :root {
+      --bg: #070a11;
+      --card-bg: #0d121f;
+      --border: #1e2638;
+      --mint: #00F5A0;
+      --cyan: #00D9F5;
+      --indigo: #6366F1;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+      max-width: 800px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(0, 245, 160, 0.1);
+      border: 1px solid var(--mint);
+      color: var(--mint);
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--mint), var(--cyan), var(--indigo));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* Tabs */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      background: #0b0f19;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 4px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover { color: #fff; background: rgba(255,255,255,0.05); }
+    .tab-btn.active {
+      background: rgba(0, 245, 160, 0.15);
+      color: var(--mint);
+      border: 1px solid rgba(0, 245, 160, 0.4);
+    }
+
+    .tab-panel {
+      display: none;
+      width: 100%;
+      max-width: 900px;
+    }
+    .tab-panel.active { display: block; }
+
+    /* Card container */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Snake Game */
+    .game-hud {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+    }
+
+    .hud-stat {
+      background: #070a11;
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 8px;
+    }
+    .hud-stat span { color: var(--mint); font-weight: bold; }
+
+    #snakeCanvas {
+      width: 100%;
+      max-width: 600px;
+      height: 380px;
+      background: #05070d;
+      border: 2px solid #1f2937;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto 16px auto;
+      box-shadow: inset 0 0 20px rgba(0, 245, 160, 0.1);
+    }
+
+    .controls-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      background: #161f30;
+      color: #fff;
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn:hover { background: #202b42; border-color: var(--mint); }
+    .btn-primary {
+      background: linear-gradient(135deg, #00F5A0, #00D9F5);
+      color: #000;
+      border: none;
+      font-weight: 700;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+
+    /* D-Pad on Mobile */
+    .d-pad {
+      display: grid;
+      grid-template-columns: repeat(3, 44px);
+      grid-template-rows: repeat(2, 44px);
+      gap: 6px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .d-pad button {
+      background: #111827;
+      border: 1px solid #374151;
+      color: #fff;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* 3D Orbit Canvas */
+    #orbitCanvas {
+      width: 100%;
+      height: 420px;
+      background: #05070d;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: block;
+      cursor: grab;
+    }
+    #orbitCanvas:active { cursor: grabbing; }
+
+    /* Terminal */
+    .terminal-body {
+      background: #050811;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+    }
+    .term-output {
+      flex: 1;
+      overflow-y: auto;
+      max-height: 340px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .term-input-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+    }
+    .term-prompt { color: var(--mint); font-weight: bold; }
+    .term-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      outline: none;
+    }
+
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+    footer a { color: var(--cyan); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+<script src="/_aistudio-iframe.js?v=2c34bde1"></script></head>
+<body>
+
+  <header>
+    <div class="badge">HARSHIT DEV // H-DEVZ</div>
+    <h1>Cyber Arcade & 3D Matrix Suite</h1>
+    <p class="subtitle">Playable Contribution Snake, Interactive 3D Hologram, & Cyber CLI Terminal</p>
+  </header>
+
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="switchTab('snake')">🎮 Cyber Snake Arcade</button>
+    <button class="tab-btn" onclick="switchTab('3d')">🌐 3D Isometric Matrix</button>
+    <button class="tab-btn" onclick="switchTab('terminal')">💻 Cyber Terminal CLI</button>
+    <button class="tab-btn" onclick="window.open('https://h-devz.vercel.app/', '_blank')">⚡ Flagship Portfolio ↗</button>
+  </nav>
+
+  <!-- TAB 1: SNAKE ARCADE -->
+  <div id="tab-snake" class="tab-panel active">
+    <div class="card">
+      <div class="game-hud">
+        <div class="hud-stat">COMMITS EATEN: <span id="scoreVal">0</span></div>
+        <div class="hud-stat">HIGH SCORE: <span id="highScoreVal">0</span></div>
+        <div class="hud-stat">SPEED: <span id="speedVal">1x</span></div>
+      </div>
+
+      <canvas id="snakeCanvas" width="600" height="380"></canvas>
+
+      <div class="controls-bar">
+        <button class="btn btn-primary" id="startBtn" onclick="toggleGame()">START / RESTART</button>
+        <button class="btn" onclick="togglePause()">PAUSE</button>
+      </div>
+
+      <p style="text-align:center; font-size:12px; color:var(--text-muted);">
+        Use <b>Arrow Keys</b> or <b>W, A, S, D</b> to navigate the snake. Eat green GitHub commits to grow!
+      </p>
+
+      <div class="d-pad">
+        <div></div>
+        <button onclick="handleKey('ArrowUp')">▲</button>
+        <div></div>
+        <button onclick="handleKey('ArrowLeft')">◀</button>
+        <button onclick="handleKey('ArrowDown')">▼</button>
+        <button onclick="handleKey('ArrowRight')">▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: 3D ISOMETRIC MATRIX -->
+  <div id="tab-3d" class="tab-panel">
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <span style="font-size:13px; font-family:var(--font-mono); color:var(--cyan);">
+          🌐 INTERACTIVE 3D COMMIT MATRIX (CLICK & DRAG TO ORBIT)
+        </span>
+        <button class="btn" style="padding:4px 10px; font-size:11px;" onclick="resetOrbit()">Reset Camera</button>
+      </div>
+
+      <canvas id="orbitCanvas" width="860" height="420"></canvas>
+
+      <p style="text-align:center; font-size:12px; color:var(--text-muted); margin-top:10px;">
+        Click and drag with mouse or swipe on screen to rotate camera in 3D space.
+      </p>
+    </div>
+  </div>
+
+  <!-- TAB 3: CYBER TERMINAL -->
+  <div id="tab-terminal" class="tab-panel">
+    <div class="card">
+      <div class="terminal-body">
+        <div class="term-output" id="termOutput">
+╭────────────────────────────────────────────────────────────────────────╮
+│  H-DEVZ CYBER TERMINAL CLI (v2.5)                                      │
+│  Type 'help' for available system commands                             │
+╰────────────────────────────────────────────────────────────────────────╯
+✓ Diagnostic modules online. Type 'skills', 'projects', 'snake', or 'contact'.
+        </div>
+        <div class="term-input-row">
+          <span class="term-prompt">harshit@h-devz:~$</span>
+          <input type="text" class="term-input" id="termInput" autofocus placeholder="Type command here (e.g. help)..." />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Crafted with precision by <a href="https://github.com/HarshitDevz" target="_blank">Harshit Dev (@HarshitDevz)</a> · 
+    <a href="https://h-devz.vercel.app/" target="_blank">h-devz.vercel.app</a>
+  </footer>
+
+  <script>
+    // Audio synthesizer for sound effects
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function beep(freq, duration, type="square") {
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch(e){}
+    }
+
+    // Tabs Switcher
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+      
+      const targetPanel = document.getElementById('tab-' + tabId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+        event.target.classList.add('active');
+        if (tabId === '3d') init3D();
+        beep(700, 0.05);
+      }
+    }
+
+    // --- SNAKE GAME ENGINE ---
+    const canvas = document.getElementById("snakeCanvas");
+    const ctx = canvas.getContext("2d");
+    const gridSize = 20;
+    const cols = canvas.width / gridSize;
+    const rows = canvas.height / gridSize;
+
+    let snake = [{x: 10, y: 10}];
+    let dir = {x: 1, y: 0};
+    let nextDir = {x: 1, y: 0};
+    let food = {x: 15, y: 10};
+    let score = 0;
+    let highScore = localStorage.getItem("hdevz_snake_high") || 0;
+    document.getElementById("highScoreVal").textContent = highScore;
+    let isRunning = false;
+    let isPaused = false;
+    let gameLoop = null;
+
+    function spawnFood() {
+      food = {
+        x: Math.floor(Math.random() * cols),
+        y: Math.floor(Math.random() * rows)
+      };
+    }
+
+    function toggleGame() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      beep(600, 0.08);
+      snake = [{x: 10, y: 10}, {x: 9, y: 10}, {x: 8, y: 10}];
+      dir = {x: 1, y: 0};
+      nextDir = {x: 1, y: 0};
+      score = 0;
+      document.getElementById("scoreVal").textContent = score;
+      spawnFood();
+      isRunning = true;
+      isPaused = false;
+      if (gameLoop) clearInterval(gameLoop);
+      gameLoop = setInterval(updateSnake, 90);
+    }
+
+    function togglePause() {
+      if (!isRunning) return;
+      isPaused = !isPaused;
+      beep(400, 0.05);
+    }
+
+    function handleKey(key) {
+      if (key === "ArrowUp" || key === "w" || key === "W") {
+        if (dir.y === 0) nextDir = {x: 0, y: -1};
+      } else if (key === "ArrowDown" || key === "s" || key === "S") {
+        if (dir.y === 0) nextDir = {x: 0, y: 1};
+      } else if (key === "ArrowLeft" || key === "a" || key === "A") {
+        if (dir.x === 0) nextDir = {x: -1, y: 0};
+      } else if (key === "ArrowRight" || key === "d" || key === "D") {
+        if (dir.x === 0) nextDir = {x: 1, y: 0};
+      }
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].includes(e.key)) {
+        e.preventDefault();
+      }
+      handleKey(e.key);
+    });
+
+    function updateSnake() {
+      if (isPaused) return;
+
+      dir = nextDir;
+      const head = {x: snake[0].x + dir.x, y: snake[0].y + dir.y};
+
+      // Wrap around grid borders
+      if (head.x < 0) head.x = cols - 1;
+      if (head.x >= cols) head.x = 0;
+      if (head.y < 0) head.y = rows - 1;
+      if (head.y >= rows) head.y = 0;
+
+      // Self collision
+      if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+        beep(200, 0.3, "sawtooth");
+        clearInterval(gameLoop);
+        isRunning = false;
+        alert("GAME OVER! Final Score: " + score);
+        return;
+      }
+
+      snake.unshift(head);
+
+      // Check food collision
+      if (head.x === food.x && head.y === food.y) {
+        score += 10;
+        document.getElementById("scoreVal").textContent = score;
+        if (score > highScore) {
+          highScore = score;
+          localStorage.setItem("hdevz_snake_high", highScore);
+          document.getElementById("highScoreVal").textContent = highScore;
+        }
+        beep(880, 0.08, "triangle");
+        spawnFood();
+      } else {
+        snake.pop();
+      }
+
+      drawSnake();
+    }
+
+    function drawSnake() {
+      ctx.fillStyle = "#05070d";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Draw faint grid
+      ctx.strokeStyle = "#111827";
+      ctx.lineWidth = 0.5;
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+      }
+      for (let y = 0; y < canvas.height; y += gridSize) {
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+      }
+
+      // Draw Food (GitHub commit block)
+      ctx.fillStyle = "#00F5A0";
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = "#00F5A0";
+      ctx.fillRect(food.x * gridSize + 2, food.y * gridSize + 2, gridSize - 4, gridSize - 4);
+      ctx.shadowBlur = 0;
+
+      // Draw Snake Body
+      snake.forEach((seg, i) => {
+        if (i === 0) {
+          ctx.fillStyle = "#00D9F5"; // Head
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = "#00D9F5";
+        } else {
+          ctx.fillStyle = i % 2 === 0 ? "#00F5A0" : "#39D353";
+          ctx.shadowBlur = 0;
+        }
+        ctx.fillRect(seg.x * gridSize + 1, seg.y * gridSize + 1, gridSize - 2, gridSize - 2);
+      });
+      ctx.shadowBlur = 0;
+    }
+    drawSnake();
+
+    // --- 3D ISOMETRIC MATRIX ENGINE ---
+    const c3d = document.getElementById("orbitCanvas");
+    const ctx3d = c3d.getContext("2d");
+    let rotX = 0.6;
+    let rotY = -0.7;
+    let isDragging = false;
+    let lastX = 0, lastY = 0;
+
+    c3d.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      lastX = e.clientX;
+      lastY = e.clientY;
+    });
+    window.addEventListener("mouseup", () => isDragging = false);
+    c3d.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      rotY += (e.clientX - lastX) * 0.008;
+      rotX += (e.clientY - lastY) * 0.008;
+      lastX = e.clientX;
+      lastY = e.clientY;
+      draw3D();
+    });
+
+    // Touch support for mobile
+    c3d.addEventListener("touchstart", (e) => {
+      if (e.touches.length === 1) {
+        isDragging = true;
+        lastX = e.touches[0].clientX;
+        lastY = e.touches[0].clientY;
+      }
+    });
+    window.addEventListener("touchend", () => isDragging = false);
+    c3d.addEventListener("touchmove", (e) => {
+      if (!isDragging || e.touches.length !== 1) return;
+      rotY += (e.touches[0].clientX - lastX) * 0.008;
+      rotX += (e.touches[0].clientY - lastY) * 0.008;
+      lastX = e.touches[0].clientX;
+      lastY = e.touches[0].clientY;
+      draw3D();
+    });
+
+    function resetOrbit() {
+      rotX = 0.6;
+      rotY = -0.7;
+      draw3D();
+    }
+
+    // Grid data
+    const gridCols = 24;
+    const gridRows = 7;
+    const heights = [];
+    for (let c = 0; c < gridCols; c++) {
+      heights[c] = [];
+      for (let r = 0; r < gridRows; r++) {
+        heights[c][r] = Math.random() > 0.4 ? Math.floor(Math.random() * 50) + 10 : 0;
+      }
+    }
+
+    function init3D() {
+      draw3D();
+    }
+
+    function draw3D() {
+      ctx3d.fillStyle = "#05070d";
+      ctx3d.fillRect(0, 0, c3d.width, c3d.height);
+
+      const cx = c3d.width / 2;
+      const cy = c3d.height / 2 + 40;
+      const cellSize = 14;
+
+      for (let c = 0; c < gridCols; c++) {
+        for (let r = 0; r < gridRows; r++) {
+          const x0 = (c - gridCols / 2) * cellSize;
+          const z0 = (r - gridRows / 2) * cellSize;
+          const h = heights[c][r];
+
+          // 3D Rotation transform
+          const cosY = Math.cos(rotY), sinY = Math.sin(rotY);
+          const cosX = Math.cos(rotX), sinX = Math.sin(rotX);
+
+          const x1 = x0 * cosY - z0 * sinY;
+          const z1 = x0 * sinY + z0 * cosY;
+          const y1 = -h;
+
+          const projX = cx + x1;
+          const projY = cy + y1 * cosX - z1 * sinX;
+
+          // Color based on height
+          if (h > 0) {
+            ctx3d.fillStyle = h > 35 ? "#00F5A0" : h > 20 ? "#00D9F5" : "#0e4429";
+            ctx3d.fillRect(projX - cellSize/2, projY - cellSize/2, cellSize - 2, h + 4);
+          } else {
+            ctx3d.fillStyle = "#161b22";
+            ctx3d.fillRect(projX - cellSize/2, projY - cellSize/2, cellSize - 2, cellSize - 2);
+          }
+        }
+      }
+    }
+    init3D();
+
+    // --- CYBER TERMINAL ENGINE ---
+    const termInput = document.getElementById("termInput");
+    const termOutput = document.getElementById("termOutput");
+
+    const commands = {
+      help: "Available commands:\n  • skills    : Show Harshit's primary tech stack\n  • projects  : View flagship deployments\n  • snake     : Switch to snake arcade game\n  • 3d        : Switch to 3D matrix viewer\n  • portfolio : Open live portfolio (h-devz.vercel.app)\n  • clear     : Clear terminal history\n  • contact   : Get direct contact info",
+      skills: "⚡ TECHNICAL PROFICIENCIES:\n  Frontend : Next.js 15, React 19, TypeScript, Tailwind CSS, Framer Motion\n  Backend  : Node.js, Express.js, MongoDB, REST APIs, GraphQL\n  Cloud    : Vercel Edge, GitHub Actions, Firebase, Docker",
+      projects: "🚀 FEATURED DEPLOYMENTS:\n  [1] H-DEVZ Flagship Portfolio (https://h-devz.vercel.app/)\n  [2] Enterprise Full-Stack Application Suite\n  [3] Modern Automation & Developer Workflows",
+      snake: () => { switchTab('snake'); return "Launching Snake Arcade Game..."; },
+      "3d": () => { switchTab('3d'); return "Launching 3D Isometric Matrix..."; },
+      portfolio: () => { window.open('https://h-devz.vercel.app/', '_blank'); return "Opening https://h-devz.vercel.app/ in new tab..."; },
+      clear: () => { termOutput.textContent = ""; return ""; },
+      contact: "📬 DISPATCH HARSHIT:\n  Email     : harshhit.uiu@gmail.com\n  LinkedIn  : https://www.linkedin.com/in/harshitdevz/\n  Portfolio : https://h-devz.vercel.app/"
+    };
+
+    termInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        const cmd = termInput.value.trim().toLowerCase();
+        termInput.value = "";
+        beep(800, 0.04);
+
+        termOutput.textContent += `\nharshit@h-devz:~$ ${cmd}\n`;
+        if (commands[cmd]) {
+          const res = typeof commands[cmd] === "function" ? commands[cmd]() : commands[cmd];
+          if (res) termOutput.textContent += res + "\n";
+        } else if (cmd !== "") {
+          termOutput.textContent += `Command not recognized: '${cmd}'. Type 'help' for commands.\n`;
+        }
+        termOutput.scrollTop = termOutput.scrollHeight;
+      }
+    });
+
+    // Check query params if any
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("action") === "snake") switchTab("snake");
+    if (urlParams.get("action") === "3d") switchTab("3d");
+    if (urlParams.get("action") === "terminal") switchTab("terminal");
+  </script>
+</body>
+</html>
