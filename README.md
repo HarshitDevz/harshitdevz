@@ -8,7 +8,7 @@
 
   <br>
   <a href="https://h-devz.vercel.app/">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1200&color=00F5A0&center=true&vCenter=true&multiline=true&repeat=true&width=850&height=70&lines=%F0%9F%9A%80%20Architecting%20next-gen%20web%20apps%20with%20Next.js%20%26%20TypeScript%3B%20%F0%9F%8C%90%20Live%20digital%20portfolio%3A%20h-devz.vercel.app%3B%20%E2%9A%A1%20Clean%20code%2C%20rapid%20shipping%20%26%20sub-second%20latency%3B%20%F0%9F%9B%A0%EF%B8%8F%20Building%20end-to-end%20full-stack%20digital%20products" alt="H-DEVZ Telemetry" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&duration=2800&pause=1000&color=00F5A0&center=true&vCenter=true&multiline=false&repeat=true&width=860&height=46&lines=%F0%9F%9A%80%20Architecting%20next-gen%20web%20apps%20with%20Next.js%20%26%20TypeScript%3B%F0%9F%8C%90%20Live%20digital%20portfolio%3A%20h-devz.vercel.app%3B%E2%9A%A1%20Clean%20code%2C%20rapid%20shipping%20%26%20sub-second%20latency%3B%F0%9F%9B%A0%EF%B8%8F%20Building%20end-to-end%20full-stack%20digital%20products" alt="H-DEVZ Telemetry" />
   </a>
 
   <br><br>
@@ -32,24 +32,26 @@
 ---
 
 ### 🕹️ INTERACTIVE MISSION CONTROL // LAUNCHPAD
+<sub>Pure HTML5 Canvas, CSS3 & Web Audio Synth &bull; Click any module to launch live</sub>
 
 <div align="center">
 
-  <a href="https://ais-pre-vbdrdb2deaq7jql3s4n55i-787898000737.asia-southeast1.run.app/?action=snake" target="_blank">
-    <img src="https://img.shields.io/badge/🎮_PLAY_CYBER_SNAKE-START_ARCADE-00F5A0?style=for-the-badge&logo=gamepad&logoColor=black" alt="Play Cyber Snake" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://ais-pre-vbdrdb2deaq7jql3s4n55i-787898000737.asia-southeast1.run.app/?action=3d" target="_blank">
-    <img src="https://img.shields.io/badge/🌐_3D_ISOMETRIC_LAB-EXPLORE_ORBIT-00D9F5?style=for-the-badge&logo=three.js&logoColor=black" alt="3D Isometric Lab" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://h-devz.vercel.app/" target="_blank">
-    <img src="https://img.shields.io/badge/⚡_FLAGSHIP_PORTFOLIO-h--devz.vercel.app-6366F1?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Portfolio" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://ais-pre-vbdrdb2deaq7jql3s4n55i-787898000737.asia-southeast1.run.app/?action=terminal" target="_blank">
-    <img src="https://img.shields.io/badge/💻_CYBER_TERMINAL-EXECUTE_CLI-161b22?style=for-the-badge&logo=gnubash&logoColor=00F5A0" alt="Cyber Terminal" />
-  </a>
+| Module | System Architecture | Live Execution |
+| :--- | :--- | :---: |
+| 🎮 **Play Cyber Snake** | *Retro HTML5 Canvas Arcade &bull; Sound Synthesis &bull; WASD / Arrows* | <a href="https://ais-pre-vbdrdb2deaq7jql3s4n55i-787898000737.asia-southeast1.run.app/?action=snake" target="_blank"><img src="https://img.shields.io/badge/PLAY_CYBER_SNAKE-START_ARCADE-00F5A0?style=for-the-badge&logo=gamepad&logoColor=black" alt="Play Snake" /></a> |
+| 🌐 **3D Isometric Lab** | *Interactive 3D Matrix &bull; Mouse / Touch Orbit &bull; Extruded Pillars* | <a href="https://ais-pre-vbdrdb2deaq7jql3s4n55i-787898000737.asia-southeast1.run.app/?action=3d" target="_blank"><img src="https://img.shields.io/badge/3D_ISOMETRIC_LAB-EXPLORE_ORBIT-00D9F5?style=for-the-badge&logo=three.js&logoColor=black" alt="3D Lab" /></a> |
+| ⚡ **Live Portfolio** | *Next.js 15 &bull; Lighthouse 98+ &bull; Sub-Second Latency &bull; Production Platform* | <a href="https://h-devz.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/LIVE_PORTFOLIO-H--DEVZ.VERCEL.APP-6366F1?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a> |
+| 💻 **Cyber Terminal** | *Interactive CLI Shell &bull; Diagnostics &bull; Audio Feedback &bull; Commands* | <a href="https://ais-pre-vbdrdb2deaq7jql3s4n55i-787898000737.asia-southeast1.run.app/?action=terminal" target="_blank"><img src="https://img.shields.io/badge/CYBER_TERMINAL-EXECUTE_CLI-161b22?style=for-the-badge&logo=gnubash&logoColor=00F5A0" alt="Terminal" /></a> |
+
+<br>
+
+<a href="https://harshitdevz.github.io/arcade.html" target="_blank">
+  <img src="https://img.shields.io/badge/🚀_LAUNCH_STANDALONE_WEB_ARCADE_SUITE_(HTML_•_CSS_•_JS)-00F5A0?style=for-the-badge&logo=html5&logoColor=black" alt="Launch Web Suite" />
+</a>
+&nbsp;&nbsp;
+<a href="https://htmlpreview.github.io/?https://github.com/HarshitDevz/HarshitDevz/blob/main/arcade.html" target="_blank">
+  <img src="https://img.shields.io/badge/🌐_INSTANT_HTML_PREVIEW-MIRROR-161b22?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Instant Mirror" />
+</a>
 
 </div>
 
