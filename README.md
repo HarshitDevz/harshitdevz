@@ -127,7 +127,7 @@ const engineer = {
         <br><br>
         <img src="https://img.shields.io/badge/Status-Active_Development-FF6B00?style=flat-square" />
         <img src="https://img.shields.io/badge/Delivery-30--60_Mins-00FF00?style=flat-square" />
-        <img src="https://img.shields.io/badge/Try--at--Home-Enabled-00D9F5?style=flat-square" />
+        <img src="https://img.shields.io/badge/1--Hr_Return-Window-00D9F5?style=flat-square" />
       </div>
       <br>
       <ul>
