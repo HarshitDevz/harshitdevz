@@ -16,22 +16,35 @@
 
 <div align="center">
 
-### 🕹️ INTERACTIVE MISSION CONTROL // LAUNCHPAD
-<sub>Pure HTML5 Canvas, 3D Matrix Engine & Cyber Terminal &bull; Click any module to launch live</sub>
+### 💻 LIVE TERMINAL CLI // HARSHIT-SHELL (zsh)
+<sub>Real-time animated command shell &bull; Click the terminal or any command to execute live</sub>
 
 <br>
 
-| Module | System Architecture | Live Launch |
+<a href="https://harshitdevz.github.io/arcade.html#terminal" target="_blank">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HarshitDevz/HarshitDevz/main/terminal.svg">
+    <img src="https://raw.githubusercontent.com/HarshitDevz/HarshitDevz/main/terminal.svg" width="100%" alt="Harshit Live Terminal CLI Shell" />
+  </picture>
+</a>
+
+<br><br>
+
+#### ⚡ Direct 1-Click Terminal Command Launchers
+<sub>Click any executable command to run directly in the browser shell:</sub>
+
+| Executable Shell Command | Target System / Module | Live Trigger |
 | :--- | :--- | :---: |
-| 🎮 **Play Cyber Snake** | *Retro HTML5 Canvas Arcade &bull; Sound Synthesis &bull; WASD / Arrows* | <a href="https://harshitdevz.github.io/arcade.html#snake" target="_blank"><img src="https://img.shields.io/badge/PLAY_CYBER_SNAKE-START_ARCADE-00F5A0?style=for-the-badge&logo=gamepad&logoColor=black" alt="Play Snake" /></a> |
-| 🌐 **3D Isometric Lab** | *Interactive 3D Matrix &bull; Mouse / Touch Orbit &bull; Extruded Pillars* | <a href="https://harshitdevz.github.io/arcade.html#3d" target="_blank"><img src="https://img.shields.io/badge/3D_ISOMETRIC_LAB-EXPLORE_ORBIT-00D9F5?style=for-the-badge&logo=three.js&logoColor=black" alt="3D Lab" /></a> |
-| ⚡ **Live Portfolio** | *Next.js 15 &bull; Lighthouse 98+ &bull; Sub-Second Latency &bull; Production Platform* | <a href="https://h-devz.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/LIVE_PORTFOLIO-HARSHIT.VERCEL.APP-6366F1?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a> |
-| 💻 **Cyber Terminal** | *Interactive CLI Shell &bull; Diagnostics &bull; Audio Feedback &bull; Commands* | <a href="https://harshitdevz.github.io/arcade.html#terminal" target="_blank"><img src="https://img.shields.io/badge/CYBER_TERMINAL-EXECUTE_CLI-161b22?style=for-the-badge&logo=gnubash&logoColor=00F5A0" alt="Terminal" /></a> |
+| <a href="https://harshitdevz.github.io/arcade.html#terminal" target="_blank"><code>$ harshit-cli whoami</code></a> | *Developer credentials, AIML @ Chitkara &amp; bio* | <a href="https://harshitdevz.github.io/arcade.html#terminal" target="_blank"><img src="https://img.shields.io/badge/RUN-WHOAMI-10b981?style=flat-square&logo=gnubash&logoColor=white" alt="Run whoami" /></a> |
+| <a href="https://harshitdevz.github.io/arcade.html#terminal" target="_blank"><code>$ harshit-cli cat wearbuy.json</code></a> | *WearBuy: 60-min fashion &amp; 1-Hr return window* | <a href="https://harshitdevz.github.io/arcade.html#terminal" target="_blank"><img src="https://img.shields.io/badge/RUN-WEARBUY-06b6d4?style=flat-square&logo=json&logoColor=white" alt="Run wearbuy" /></a> |
+| <a href="https://harshitdevz.github.io/arcade.html#3d" target="_blank"><code>$ harshit-cli launch --3d</code></a> | *3D WebGL activity landscape with laser telemetry* | <a href="https://harshitdevz.github.io/arcade.html#3d" target="_blank"><img src="https://img.shields.io/badge/LAUNCH-3D_LANDSCAPE-6366f1?style=flat-square&logo=three.js&logoColor=white" alt="Launch 3D" /></a> |
+| <a href="https://harshitdevz.github.io/arcade.html#snake" target="_blank"><code>$ harshit-cli play --snake</code></a> | *Retro canvas arcade game with chiptune audio* | <a href="https://harshitdevz.github.io/arcade.html#snake" target="_blank"><img src="https://img.shields.io/badge/PLAY-SNAKE_ARCADE-10b981?style=flat-square&logo=gamepad&logoColor=white" alt="Play Snake" /></a> |
+| <a href="https://h-devz.vercel.app/" target="_blank"><code>$ harshit-cli open --portfolio</code></a> | *Next.js 15 production platform (h-devz.vercel.app)* | <a href="https://h-devz.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/OPEN-PORTFOLIO-000000?style=flat-square&logo=vercel&logoColor=white" alt="Open Portfolio" /></a> |
 
 <br>
 
-<a href="https://harshitdevz.github.io/arcade.html" target="_blank">
-  <img src="https://img.shields.io/badge/🚀_LAUNCH_STANDALONE_WEB_ARCADE_SUITE_(HTML_•_CSS_•_JS)-00F5A0?style=for-the-badge&logo=html5&logoColor=black" alt="Launch Web Suite" />
+<a href="https://harshitdevz.github.io/arcade.html#terminal" target="_blank">
+  <img src="https://img.shields.io/badge/💻_OPEN_FULL_INTERACTIVE_TERMINAL_SHELL-161e31?style=for-the-badge&logo=gnubash&logoColor=00F5A0" alt="Open Terminal Shell" />
 </a>
 
 </div>
