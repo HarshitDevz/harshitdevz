@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b0f19,50:0e1726,100:0b0f19&height=200&section=header&text=HARSHIT%20%7C%20&fontSize=48&fontAlignY=38&animation=twinkling&fontColor=00F5A0&desc=Full-Stack%20Software%20Engineer%20%26%20Digital%20Craftsman&descAlignY=62&descSize=18" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b0f19,50:0e1726,100:0b0f19&height=200&section=header&text=HARSHIT%20%7C%20H-DEVZ&fontSize=48&fontAlignY=38&animation=twinkling&fontColor=00F5A0&desc=Full-Stack%20Software%20Engineer%20%26%20Digital%20Craftsman&descAlignY=62&descSize=18" width="100%" />
 
 
   <br>
@@ -21,7 +21,7 @@
     <img src="https://img.shields.io/badge/DISPATCH-harshhit.uiu%40gmail.com-6366F1?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   &nbsp;
-  <img src="https://komarev.com/ghpvc/?username=harshitdevz&label=PROFILE_VIEWS&color=00F5A0&style=for-the-badge" alt="Views" />
+  <img src="https://komarev.com/ghpvc/?username=HarshitDevz&label=PROFILE_VIEWS&color=00F5A0&style=for-the-badge" alt="Views" />
 
 </div>
 
@@ -32,8 +32,9 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/harshitdevz/harshitdevz/output/github-contribution-grid-snake-dark.svg">
-    <img src="https://raw.githubusercontent.com/harshitdevz/harshitdevz/output/github-contribution-grid-snake.svg" alt="Harshit's Contribution Snake" width="100%"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HarshitDevz/HarshitDevz/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HarshitDevz/HarshitDevz/output/github-contribution-grid-snake.svg">
+    <img src="https://raw.githubusercontent.com/HarshitDevz/HarshitDevz/main/github-contribution-grid-snake-dark.svg" alt="Harshit's Contribution Snake" width="100%"/>
   </picture>
 </div>
 
@@ -45,7 +46,7 @@
 
 ```yaml
 ╭──────────────────────────────────────────────────────────────────────────╮
-│  IDENTIFIER       ::  HARSHIT ()
+│  IDENTIFIER       ::  HARSHIT (H-DEVZ)
 │  ROLE             ::  Full-Stack Software Engineer & Digital Craftsman
 │  PORTFOLIO        ::  https://h-devz.vercel.app/
 │  LINKEDIN         ::  https://www.linkedin.com/in/harshitdevz/
@@ -102,6 +103,36 @@
 
 ---
 
+
+### 🌐 FLAGSHIP DIGITAL PLATFORM // [h-devz.vercel.app](https://h-devz.vercel.app/)
+
+<div align="center">
+
+  <a href="https://h-devz.vercel.app/">
+    <img src="https://img.shields.io/badge/PRODUCTION_STATUS-ONLINE-00F5A0?style=for-the-badge&logo=vercel&logoColor=black" alt="Status" />
+  </a>
+  &nbsp;
+  <a href="https://h-devz.vercel.app/">
+    <img src="https://img.shields.io/badge/LIGHTHOUSE-99%2F100-00D9F5?style=for-the-badge&logo=lighthouse&logoColor=black" alt="Lighthouse" />
+  </a>
+  &nbsp;
+  <a href="https://h-devz.vercel.app/">
+    <img src="https://img.shields.io/badge/STACK-NEXT.JS_15_%2B_REACT_19-6366F1?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Stack" />
+  </a>
+
+  <br><br>
+
+  <p>
+    <b>Architectural Highlights:</b> Sub-second latency (0.4s FCP), zero cumulative layout shift (0.00 CLS), interactive 3D spatial canvas, responsive viewport architecture, and edge-cached serverless deployment.
+  </p>
+
+  <a href="https://h-devz.vercel.app/">
+    <img src="https://img.shields.io/badge/EXPLORE_LIVE_PORTFOLIO-h--devz.vercel.app-00F5A0?style=for-the-badge&logo=vercel&logoColor=black" alt="Explore Portfolio" />
+  </a>
+
+</div>
+
+<br>
 
 ### 🚀 FEATURED DEPLOYMENTS & PRODUCTION WORKS
 
@@ -222,8 +253,8 @@ export async function dispatchTask<T>(
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/harshitdevz/harshitdevz/main/profile-3d-contrib/profile-night-view.svg">
-    <img src="https://raw.githubusercontent.com/harshitdevz/harshitdevz/main/profile-3d-contrib/profile-night-view.svg" alt="3D Contribution Graph" width="95%"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HarshitDevz/HarshitDevz/main/profile-3d-contrib/profile-night-view.svg">
+    <img src="https://raw.githubusercontent.com/HarshitDevz/HarshitDevz/main/profile-3d-contrib/profile-night-view.svg" alt="3D Contribution Graph" width="95%"/>
   </picture>
 </div>
 
@@ -234,12 +265,12 @@ export async function dispatchTask<T>(
 ### 📊 REPOSITORY TELEMETRY & ENGAGEMENT
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=harshitdevz&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0b0f19&ring_color=00F5A0&icon_color=00F5A0&text_color=e6edf3" height="175" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=HarshitDevz&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0b0f19&ring_color=00F5A0&icon_color=00F5A0&text_color=e6edf3" height="175" alt="GitHub Stats" />
   &nbsp;&nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=harshitdevz&layout=compact&theme=tokyonight&hide_border=true&bg_color=0b0f19&text_color=e6edf3" height="175" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HarshitDevz&layout=compact&theme=tokyonight&hide_border=true&bg_color=0b0f19&text_color=e6edf3" height="175" alt="Top Languages" />
   
   <br><br>
-  <img src="https://streak-stats.demolab.com?user=harshitdevz&theme=tokyonight&hide_border=true&background=0b0f19&ring=00F5A0&fire=00F5A0&currStreakLabel=00F5A0&stroke=30363d" width="62%" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com?user=HarshitDevz&theme=tokyonight&hide_border=true&background=0b0f19&ring=00F5A0&fire=00F5A0&currStreakLabel=00F5A0" width="65%" alt="GitHub Streak" />
 </div>
 
 
@@ -318,8 +349,8 @@ Looking to build a state-of-the-art web platform, collaborate on high-scale engi
   <img src="https://img.shields.io/badge/EMAIL-harshhit.uiu%40gmail.com-6366F1?style=for-the-badge&logo=gmail&logoColor=white" height="38" alt="Direct Email" />
 </a>
 &nbsp;&nbsp;
-<a href="https://github.com/harshitdevz">
-  <img src="https://img.shields.io/badge/GITHUB-harshitdevz-161b22?style=for-the-badge&logo=github&logoColor=white" height="38" alt="GitHub Profile" />
+<a href="https://github.com/HarshitDevz">
+  <img src="https://img.shields.io/badge/GITHUB-HarshitDevz-161b22?style=for-the-badge&logo=github&logoColor=white" height="38" alt="GitHub Profile" />
 </a>
 
 <br><br>
