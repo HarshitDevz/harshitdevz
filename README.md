@@ -32,20 +32,20 @@
 
 <div align="center">
 
-  <a href="https://h-devz.vercel.app/">
-    <img src="https://img.shields.io/badge/🎮_PLAY_CYBER_SNAKE-START_ARCADE-00F5A0?style=for-the-badge&logo=gamepad&logoColor=black" alt="Play Snake Arcade" />
+  <a href="#-live-telemetry--contribution-snake">
+    <img src="https://img.shields.io/badge/🟢_CONTRIBUTION_SNAKE-LIVE_TELEMETRY-00F5A0?style=for-the-badge&logo=github&logoColor=black" alt="Contribution Snake" />
   </a>
   &nbsp;&nbsp;
-  <a href="https://h-devz.vercel.app/">
-    <img src="https://img.shields.io/badge/🌐_3D_ISOMETRIC_LAB-EXPLORE_ORBIT-00D9F5?style=for-the-badge&logo=three.js&logoColor=black" alt="3D Lab" />
+  <a href="#-3d-isometric-contribution-matrix">
+    <img src="https://img.shields.io/badge/🌐_3D_ISOMETRIC_MATRIX-VIEW_GRAPH-00D9F5?style=for-the-badge&logo=three.js&logoColor=black" alt="3D Isometric Matrix" />
   </a>
   &nbsp;&nbsp;
-  <a href="https://h-devz.vercel.app/">
-    <img src="https://img.shields.io/badge/⚡_FLAGSHIP_PORTFOLIO-h--devz.vercel.app-6366F1?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+  <a href="https://h-devz.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/⚡_FLAGSHIP_PORTFOLIO-h--devz.vercel.app-6366F1?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Portfolio" />
   </a>
   &nbsp;&nbsp;
-  <a href="https://h-devz.vercel.app/">
-    <img src="https://img.shields.io/badge/💻_CYBER_TERMINAL-EXECUTE_CLI-161b22?style=for-the-badge&logo=gnubash&logoColor=00F5A0" alt="Terminal" />
+  <a href="#-technical-arsenal--proficiencies">
+    <img src="https://img.shields.io/badge/🛠️_TECH_ARSENAL-STACK_MATRIX-161b22?style=for-the-badge&logo=typescript&logoColor=00F5A0" alt="Tech Arsenal" />
   </a>
 
 </div>
@@ -54,6 +54,7 @@
 ---
 
 
+<a id="-live-telemetry--contribution-snake"></a>
 ### 🟢 LIVE TELEMETRY // CONTRIBUTION SNAKE
 
 <div align="center">
@@ -68,6 +69,7 @@
 ---
 
 
+<a id="-3d-isometric-contribution-matrix"></a>
 ### 🌐 3D ISOMETRIC CONTRIBUTION MATRIX
 
 <div align="center">
@@ -81,6 +83,7 @@
 ---
 
 
+<a id="-technical-arsenal--proficiencies"></a>
 ### 🛠️ TECHNICAL ARSENAL & PROFICIENCIES
 
 <div align="center">
