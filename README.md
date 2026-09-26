@@ -1,6 +1,9 @@
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b0f19,50:0e1726,100:0b0f19&height=200&section=header&text=HARSHIT%20%7C%20H-DEVZ&fontSize=48&fontAlignY=38&animation=twinkling&fontColor=00F5A0&desc=Full-Stack%20Software%20Engineer%20%26%20Digital%20Craftsman&descAlignY=62&descSize=18" width="100%" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HarshitDevz/HarshitDevz/main/hero-banner.svg">
+    <img src="https://raw.githubusercontent.com/HarshitDevz/HarshitDevz/main/hero-banner.svg" alt="Harshit // H-DEVZ" width="100%" />
+  </picture>
 
 
   <br>
