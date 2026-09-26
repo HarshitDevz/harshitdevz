@@ -145,7 +145,7 @@ const engineer = {
       <br>
       <ul>
         <li>⚡ <b>Hyperlocal Quick-Commerce:</b> Connects customers with local offline stores &amp; verified fashion hubs in Punjab</li>
-        <li>🏠 <b>Try-Before-You-Buy:</b> 60-min doorstep express delivery with instant 1-hour exchanges and returns</li>
+        <li>🏠 <b>From wearbuy:</b> 60-min doorstep express delivery with instant 1-hour exchanges and returns</li>
         <li>🛒 <b>Multi-Portal Ecosystem:</b> Built-in dedicated portals for Seller Partners and Delivery Fleets</li>
         <li>🌐 <b>Modern Stack:</b> High-velocity architecture powered by React, TanStack, Tailwind &amp; Cloudflare Workers</li>
       </ul>
