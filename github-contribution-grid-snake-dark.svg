@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 200" width="100%" height="200">
+  <defs>
+    <style>
+      .bg { fill: #0b0f19; rx: 12px; }
+      .header-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600; fill: #f0f6fc; }
+      .cell { width: 11px; height: 11px; rx: 2.5px; }
+      .c0 { fill: #161b22; }
+      .c1 { fill: #0e4429; }
+      .c2 { fill: #006d32; }
+      .c3 { fill: #26a641; }
+      .c4 { fill: #39d353; }
+
+      /* Snake Movement Across the Board */
+      @keyframes slitherGroup {
+        0% { transform: translate(60px, 30px); }
+        15% { transform: translate(240px, 30px); }
+        25% { transform: translate(240px, 60px); }
+        40% { transform: translate(420px, 60px); }
+        55% { transform: translate(420px, 15px); }
+        70% { transform: translate(620px, 15px); }
+        85% { transform: translate(620px, 75px); }
+        100% { transform: translate(60px, 30px); }
+      }
+
+      .snake-carrier {
+        animation: slitherGroup 14s infinite ease-in-out;
+      }
+
+      /* Eating pulse */
+      @keyframes eatPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+      }
+      .snake-head-box {
+        animation: eatPulse 0.4s infinite alternate;
+      }
+    </style>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="850" height="200" class="bg" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Header with Icon and Title -->
+  <g transform="translate(24, 25)">
+    <!-- Snake loop icon -->
+    <path d="M4 12a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4 4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zm8-2H8a2 2 0 0 0 0 4h4a2 2 0 0 0 0-4z" fill="#00F5A0"/>
+    <circle cx="16" cy="12" r="1.5" fill="#e879f9"/>
+    <text x="24" y="14" class="header-text">Contribution Snake</text>
+    <text x="165" y="14" font-family="monospace" font-size="11" fill="#00F5A0">● HARSHIT // H-DEVZ LIVE RUN</text>
+    <text x="790" y="14" text-anchor="end" font-family="monospace" font-size="11" fill="#8b949e">951 COMMITS</text>
+  </g>
+
+  <!-- Full 52x7 Contribution Grid -->
+  <g transform="translate(24, 50)">
+    <!-- Row 0 -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" class="cell c0"/><rect x="15" y="0" class="cell c0"/><rect x="30" y="0" class="cell c1"/><rect x="45" y="0" class="cell c2"/><rect x="60" y="0" class="cell c1"/><rect x="75" y="0" class="cell c0"/><rect x="90" y="0" class="cell c0"/><rect x="105" y="0" class="cell c2"/><rect x="120" y="0" class="cell c3"/><rect x="135" y="0" class="cell c1"/><rect x="150" y="0" class="cell c0"/><rect x="165" y="0" class="cell c1"/><rect x="180" y="0" class="cell c4"/><rect x="195" y="0" class="cell c3"/><rect x="210" y="0" class="cell c2"/><rect x="225" y="0" class="cell c0"/><rect x="240" y="0" class="cell c0"/><rect x="255" y="0" class="cell c1"/><rect x="270" y="0" class="cell c3"/><rect x="285" y="0" class="cell c2"/><rect x="300" y="0" class="cell c0"/><rect x="315" y="0" class="cell c1"/><rect x="330" y="0" class="cell c2"/><rect x="345" y="0" class="cell c0"/><rect x="360" y="0" class="cell c4"/><rect x="375" y="0" class="cell c2"/><rect x="390" y="0" class="cell c1"/><rect x="405" y="0" class="cell c0"/><rect x="420" y="0" class="cell c2"/><rect x="435" y="0" class="cell c3"/><rect x="450" y="0" class="cell c1"/><rect x="465" y="0" class="cell c0"/><rect x="480" y="0" class="cell c4"/><rect x="495" y="0" class="cell c2"/><rect x="510" y="0" class="cell c0"/><rect x="525" y="0" class="cell c1"/><rect x="540" y="0" class="cell c0"/><rect x="555" y="0" class="cell c0"/><rect x="570" y="0" class="cell c1"/><rect x="585" y="0" class="cell c2"/><rect x="600" y="0" class="cell c3"/><rect x="615" y="0" class="cell c1"/><rect x="630" y="0" class="cell c0"/><rect x="645" y="0" class="cell c2"/><rect x="660" y="0" class="cell c3"/><rect x="675" y="0" class="cell c1"/><rect x="690" y="0" class="cell c0"/><rect x="705" y="0" class="cell c2"/><rect x="720" y="0" class="cell c4"/><rect x="735" y="0" class="cell c2"/><rect x="750" y="0" class="cell c1"/><rect x="765" y="0" class="cell c0"/>
+    </g>
+
+    <!-- Row 1 -->
+    <g transform="translate(0, 15)">
+      <rect x="0" y="0" class="cell c0"/><rect x="15" y="0" class="cell c1"/><rect x="30" y="0" class="cell c2"/><rect x="45" y="0" class="cell c0"/><rect x="60" y="0" class="cell c0"/><rect x="75" y="0" class="cell c3"/><rect x="90" y="0" class="cell c2"/><rect x="105" y="0" class="cell c1"/><rect x="120" y="0" class="cell c0"/><rect x="135" y="0" class="cell c0"/><rect x="150" y="0" class="cell c1"/><rect x="165" y="0" class="cell c2"/><rect x="180" y="0" class="cell c1"/><rect x="195" y="0" class="cell c2"/><rect x="210" y="0" class="cell c4"/><rect x="225" y="0" class="cell c1"/><rect x="240" y="0" class="cell c0"/><rect x="255" y="0" class="cell c1"/><rect x="270" y="0" class="cell c2"/><rect x="285" y="0" class="cell c1"/><rect x="300" y="0" class="cell c3"/><rect x="315" y="0" class="cell c2"/><rect x="330" y="0" class="cell c1"/><rect x="345" y="0" class="cell c0"/><rect x="360" y="0" class="cell c0"/><rect x="375" y="0" class="cell c2"/><rect x="390" y="0" class="cell c3"/><rect x="405" y="0" class="cell c1"/><rect x="420" y="0" class="cell c0"/><rect x="435" y="0" class="cell c0"/><rect x="450" y="0" class="cell c2"/><rect x="465" y="0" class="cell c4"/><rect x="480" y="0" class="cell c3"/><rect x="495" y="0" class="cell c1"/><rect x="510" y="0" class="cell c0"/><rect x="525" y="0" class="cell c0"/><rect x="540" y="0" class="cell c0"/><rect x="555" y="0" class="cell c3"/><rect x="570" y="0" class="cell c2"/><rect x="585" y="0" class="cell c1"/><rect x="600" y="0" class="cell c4"/><rect x="615" y="0" class="cell c2"/><rect x="630" y="0" class="cell c0"/><rect x="645" y="0" class="cell c2"/><rect x="660" y="0" class="cell c1"/><rect x="675" y="0" class="cell c0"/><rect x="690" y="0" class="cell c0"/><rect x="705" y="0" class="cell c1"/><rect x="720" y="0" class="cell c3"/><rect x="735" y="0" class="cell c2"/><rect x="750" y="0" class="cell c0"/><rect x="765" y="0" class="cell c0"/>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(0, 30)">
+      <rect x="0" y="0" class="cell c1"/><rect x="15" y="0" class="cell c2"/><rect x="30" y="0" class="cell c1"/><rect x="45" y="0" class="cell c1"/><rect x="60" y="0" class="cell c3"/><rect x="75" y="0" class="cell c4"/><rect x="90" y="0" class="cell c2"/><rect x="105" y="0" class="cell c0"/><rect x="120" y="0" class="cell c0"/><rect x="135" y="0" class="cell c1"/><rect x="150" y="0" class="cell c2"/><rect x="165" y="0" class="cell c3"/><rect x="180" y="0" class="cell c1"/><rect x="195" y="0" class="cell c0"/><rect x="210" y="0" class="cell c2"/><rect x="225" y="0" class="cell c3"/><rect x="240" y="0" class="cell c1"/><rect x="255" y="0" class="cell c0"/><rect x="270" y="0" class="cell c0"/><rect x="285" y="0" class="cell c2"/><rect x="300" y="0" class="cell c4"/><rect x="315" y="0" class="cell c2"/><rect x="330" y="0" class="cell c0"/><rect x="345" y="0" class="cell c1"/><rect x="360" y="0" class="cell c2"/><rect x="375" y="0" class="cell c0"/><rect x="390" y="0" class="cell c0"/><rect x="405" y="0" class="cell c3"/><rect x="420" y="0" class="cell c2"/><rect x="435" y="0" class="cell c1"/><rect x="450" y="0" class="cell c0"/><rect x="465" y="0" class="cell c0"/><rect x="480" y="0" class="cell c1"/><rect x="495" y="0" class="cell c2"/><rect x="510" y="0" class="cell c0"/><rect x="525" y="0" class="cell c0"/><rect x="540" y="0" class="cell c1"/><rect x="555" y="0" class="cell c2"/><rect x="570" y="0" class="cell c0"/><rect x="585" y="0" class="cell c0"/><rect x="600" y="0" class="cell c0"/><rect x="615" y="0" class="cell c0"/><rect x="630" y="0" class="cell c0"/><rect x="645" y="0" class="cell c3"/><rect x="660" y="0" class="cell c2"/><rect x="675" y="0" class="cell c0"/><rect x="690" y="0" class="cell c1"/><rect x="705" y="0" class="cell c3"/><rect x="720" y="0" class="cell c1"/><rect x="735" y="0" class="cell c0"/><rect x="750" y="0" class="cell c0"/><rect x="765" y="0" class="cell c0"/>
+    </g>
+
+    <!-- Row 3 -->
+    <g transform="translate(0, 45)">
+      <rect x="0" y="0" class="cell c1"/><rect x="15" y="0" class="cell c1"/><rect x="30" y="0" class="cell c1"/><rect x="45" y="0" class="cell c1"/><rect x="60" y="0" class="cell c1"/><rect x="75" y="0" class="cell c1"/><rect x="90" y="0" class="cell c1"/><rect x="105" y="0" class="cell c2"/><rect x="120" y="0" class="cell c3"/><rect x="135" y="0" class="cell c4"/><rect x="150" y="0" class="cell c2"/><rect x="165" y="0" class="cell c1"/><rect x="180" y="0" class="cell c0"/><rect x="195" y="0" class="cell c1"/><rect x="210" y="0" class="cell c2"/><rect x="225" y="0" class="cell c0"/><rect x="240" y="0" class="cell c0"/><rect x="255" y="0" class="cell c2"/><rect x="270" y="0" class="cell c3"/><rect x="285" y="0" class="cell c1"/><rect x="300" y="0" class="cell c0"/><rect x="315" y="0" class="cell c1"/><rect x="330" y="0" class="cell c2"/><rect x="345" y="0" class="cell c4"/><rect x="360" y="0" class="cell c3"/><rect x="375" y="0" class="cell c1"/><rect x="390" y="0" class="cell c0"/><rect x="405" y="0" class="cell c0"/><rect x="420" y="0" class="cell c1"/><rect x="435" y="0" class="cell c3"/><rect x="450" y="0" class="cell c2"/><rect x="465" y="0" class="cell c0"/><rect x="480" y="0" class="cell c0"/><rect x="495" y="0" class="cell c1"/><rect x="510" y="0" class="cell c2"/><rect x="525" y="0" class="cell c0"/><rect x="540" y="0" class="cell c0"/><rect x="555" y="0" class="cell c0"/><rect x="570" y="0" class="cell c2"/><rect x="585" y="0" class="cell c1"/><rect x="600" y="0" class="cell c0"/><rect x="615" y="0" class="cell c0"/><rect x="630" y="0" class="cell c3"/><rect x="645" y="0" class="cell c3"/><rect x="660" y="0" class="cell c0"/><rect x="675" y="0" class="cell c0"/><rect x="690" y="0" class="cell c2"/><rect x="705" y="0" class="cell c4"/><rect x="720" y="0" class="cell c1"/><rect x="735" y="0" class="cell c0"/><rect x="750" y="0" class="cell c0"/><rect x="765" y="0" class="cell c0"/>
+    </g>
+
+    <!-- Row 4 -->
+    <g transform="translate(0, 60)">
+      <rect x="0" y="0" class="cell c1"/><rect x="15" y="0" class="cell c1"/><rect x="30" y="0" class="cell c0"/><rect x="45" y="0" class="cell c1"/><rect x="60" y="0" class="cell c1"/><rect x="75" y="0" class="cell c1"/><rect x="90" y="0" class="cell c1"/><rect x="105" y="0" class="cell c1"/><rect x="120" y="0" class="cell c1"/><rect x="135" y="0" class="cell c1"/><rect x="150" y="0" class="cell c1"/><rect x="165" y="0" class="cell c1"/><rect x="180" y="0" class="cell c1"/><rect x="195" y="0" class="cell c1"/><rect x="210" y="0" class="cell c1"/><rect x="225" y="0" class="cell c1"/><rect x="240" y="0" class="cell c1"/><rect x="255" y="0" class="cell c1"/><rect x="270" y="0" class="cell c1"/><rect x="285" y="0" class="cell c1"/><rect x="300" y="0" class="cell c1"/><rect x="315" y="0" class="cell c0"/><rect x="330" y="0" class="cell c2"/><rect x="345" y="0" class="cell c3"/><rect x="360" y="0" class="cell c1"/><rect x="375" y="0" class="cell c0"/><rect x="390" y="0" class="cell c1"/><rect x="405" y="0" class="cell c2"/><rect x="420" y="0" class="cell c0"/><rect x="435" y="0" class="cell c0"/><rect x="450" y="0" class="cell c0"/><rect x="465" y="0" class="cell c0"/><rect x="480" y="0" class="cell c2"/><rect x="495" y="0" class="cell c3"/><rect x="510" y="0" class="cell c1"/><rect x="525" y="0" class="cell c0"/><rect x="540" y="0" class="cell c0"/><rect x="555" y="0" class="cell c0"/><rect x="570" y="0" class="cell c0"/><rect x="585" y="0" class="cell c0"/><rect x="600" y="0" class="cell c0"/><rect x="615" y="0" class="cell c0"/><rect x="630" y="0" class="cell c0"/><rect x="645" y="0" class="cell c4"/><rect x="660" y="0" class="cell c2"/><rect x="675" y="0" class="cell c1"/><rect x="690" y="0" class="cell c0"/><rect x="705" y="0" class="cell c0"/><rect x="720" y="0" class="cell c2"/><rect x="735" y="0" class="cell c1"/><rect x="750" y="0" class="cell c0"/><rect x="765" y="0" class="cell c0"/>
+    </g>
+
+    <!-- Row 5 -->
+    <g transform="translate(0, 75)">
+      <rect x="0" y="0" class="cell c0"/><rect x="15" y="0" class="cell c1"/><rect x="30" y="0" class="cell c1"/><rect x="45" y="0" class="cell c1"/><rect x="60" y="0" class="cell c1"/><rect x="75" y="0" class="cell c1"/><rect x="90" y="0" class="cell c1"/><rect x="105" y="0" class="cell c1"/><rect x="120" y="0" class="cell c1"/><rect x="135" y="0" class="cell c1"/><rect x="150" y="0" class="cell c1"/><rect x="165" y="0" class="cell c1"/><rect x="180" y="0" class="cell c1"/><rect x="195" y="0" class="cell c1"/><rect x="210" y="0" class="cell c1"/><rect x="225" y="0" class="cell c1"/><rect x="240" y="0" class="cell c1"/><rect x="255" y="0" class="cell c1"/><rect x="270" y="0" class="cell c1"/><rect x="285" y="0" class="cell c1"/><rect x="300" y="0" class="cell c1"/><rect x="315" y="0" class="cell c0"/><rect x="330" y="0" class="cell c1"/><rect x="345" y="0" class="cell c2"/><rect x="360" y="0" class="cell c4"/><rect x="375" y="0" class="cell c2"/><rect x="390" y="0" class="cell c0"/><rect x="405" y="0" class="cell c0"/><rect x="420" y="0" class="cell c1"/><rect x="435" y="0" class="cell c3"/><rect x="450" y="0" class="cell c1"/><rect x="465" y="0" class="cell c0"/><rect x="480" y="0" class="cell c0"/><rect x="495" y="0" class="cell c0"/><rect x="510" y="0" class="cell c0"/><rect x="525" y="0" class="cell c0"/><rect x="540" y="0" class="cell c0"/><rect x="555" y="0" class="cell c0"/><rect x="570" y="0" class="cell c3"/><rect x="585" y="0" class="cell c0"/><rect x="600" y="0" class="cell c0"/><rect x="615" y="0" class="cell c3"/><rect x="630" y="0" class="cell c2"/><rect x="645" y="0" class="cell c0"/><rect x="660" y="0" class="cell c0"/><rect x="675" y="0" class="cell c0"/><rect x="690" y="0" class="cell c1"/><rect x="705" y="0" class="cell c2"/><rect x="720" y="0" class="cell c0"/><rect x="735" y="0" class="cell c0"/><rect x="750" y="0" class="cell c0"/><rect x="765" y="0" class="cell c0"/>
+    </g>
+
+    <!-- Row 6 -->
+    <g transform="translate(0, 90)">
+      <rect x="0" y="0" class="cell c0"/><rect x="15" y="0" class="cell c1"/><rect x="30" y="0" class="cell c1"/><rect x="45" y="0" class="cell c1"/><rect x="60" y="0" class="cell c1"/><rect x="75" y="0" class="cell c1"/><rect x="90" y="0" class="cell c1"/><rect x="105" y="0" class="cell c1"/><rect x="120" y="0" class="cell c1"/><rect x="135" y="0" class="cell c1"/><rect x="150" y="0" class="cell c1"/><rect x="165" y="0" class="cell c1"/><rect x="180" y="0" class="cell c1"/><rect x="195" y="0" class="cell c1"/><rect x="210" y="0" class="cell c1"/><rect x="225" y="0" class="cell c1"/><rect x="240" y="0" class="cell c1"/><rect x="255" y="0" class="cell c1"/><rect x="270" y="0" class="cell c1"/><rect x="285" y="0" class="cell c1"/><rect x="300" y="0" class="cell c1"/><rect x="315" y="0" class="cell c0"/><rect x="330" y="0" class="cell c0"/><rect x="345" y="0" class="cell c1"/><rect x="360" y="0" class="cell c2"/><rect x="375" y="0" class="cell c3"/><rect x="390" y="0" class="cell c1"/><rect x="405" y="0" class="cell c0"/><rect x="420" y="0" class="cell c0"/><rect x="435" y="0" class="cell c1"/><rect x="450" y="0" class="cell c2"/><rect x="465" y="0" class="cell c0"/><rect x="480" y="0" class="cell c0"/><rect x="495" y="0" class="cell c0"/><rect x="510" y="0" class="cell c0"/><rect x="525" y="0" class="cell c0"/><rect x="540" y="0" class="cell c0"/><rect x="555" y="0" class="cell c0"/><rect x="570" y="0" class="cell c0"/><rect x="585" y="0" class="cell c4"/><rect x="600" y="0" class="cell c0"/><rect x="615" y="0" class="cell c3"/><rect x="630" y="0" class="cell c0"/><rect x="645" y="0" class="cell c0"/><rect x="660" y="0" class="cell c0"/><rect x="675" y="0" class="cell c4"/><rect x="690" y="0" class="cell c0"/><rect x="705" y="0" class="cell c3"/><rect x="720" y="0" class="cell c0"/><rect x="735" y="0" class="cell c4"/><rect x="750" y="0" class="cell c0"/><rect x="765" y="0" class="cell c0"/>
+    </g>
+
+    <!-- Animated Smooth Slithering Snake Group -->
+    <g class="snake-carrier">
+      <!-- Tail -->
+      <rect x="-60" y="0" width="11" height="11" rx="3" fill="#701a75"/>
+      <rect x="-45" y="0" width="11" height="11" rx="3" fill="#86198f"/>
+      <rect x="-30" y="0" width="11" height="11" rx="3" fill="#a21caf"/>
+      <rect x="-15" y="0" width="11" height="11" rx="3" fill="#c026d3"/>
+      <!-- Head with Eyes -->
+      <g class="snake-head-box">
+        <rect x="0" y="0" width="12" height="12" rx="4" fill="#e879f9" stroke="#fae8ff" stroke-width="0.8"/>
+        <circle cx="8" cy="3" r="1.3" fill="#0b0f19"/>
+        <circle cx="8" cy="9" r="1.3" fill="#0b0f19"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Glowing Progress Track -->
+  <g transform="translate(24, 170)">
+    <rect width="802" height="4" rx="2" fill="#161b22"/>
+    <rect width="520" height="4" rx="2" fill="#006d32"/>
+    <rect width="210" height="4" rx="2" fill="#00F5A0"/>
+  </g>
+</svg>
